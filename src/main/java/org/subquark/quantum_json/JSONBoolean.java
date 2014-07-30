@@ -1,0 +1,37 @@
+package org.subquark.quantum_json;
+
+public class JSONBoolean extends JSONElement {
+    private final boolean value;
+
+    @Override
+    public JSONBoolean asJSONBoolean() {
+        return this;
+    }
+
+    @Override
+    public boolean asJavaBoolean() {
+        return this.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return value ? 1 : 0;
+    }
+
+    @Override
+    public boolean equals( Object o ) {
+        if ( o == this ) return true;
+        if ( o == null ) return false;
+
+        if ( !(o instanceof JSONBoolean) ) return false;
+
+        JSONBoolean co = (JSONBoolean) co;
+
+        return co.value == this.value;
+    }
+
+    @Override
+    public String toString() {
+        return "JSONBoolean(value=" + this.value + ")";
+    }
+}
