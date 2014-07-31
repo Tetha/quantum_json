@@ -1,6 +1,6 @@
-package org.subquark.quantum_json;
+package org.subquark.quantum_json.impl;
 
-public class JSONBoolean extends JSONElement {
+public class JSONBoolean implements JSONElement {
     private final boolean value;
 
     @Override

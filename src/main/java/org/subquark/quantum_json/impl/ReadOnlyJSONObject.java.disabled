@@ -1,0 +1,86 @@
+package org.subquark.quantum_json.impl;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class ReadOnlyJSONObject implements ReadOnlyJSONElement, Map<String, ReadOnlyJSONElement> {
+    protected final Map<String, ReadOnlyJSONElement> keyToValue; // TODO
+
+    public ReadOnlyJSONObject( Map<String, ReadOnlyJSONElement> contents ) {
+        this.keyToValue = new HashMap<>( contents );
+    }
+
+    @Override
+    public final ReadOnlyJSONObject asReadOnlyJSONObject() {
+        return this;
+    }
+
+    @Override
+    public final Set<Map.Entry<String, ReadOnlyJSONElement>> entrySet() {
+        return Collections.unmodifiableSet( keyToValue.entrySet() );
+    }
+
+    @Override
+    public final Set<String> keySet() {
+        return Collections.unmodifiableSet( keyToValue.keySet() );
+    }
+
+    @Override
+    public final Collection<ReadOnlyJSONElement> values() {
+        return Collections.unmodifiableCollection( keyToValue.values() );
+    }
+
+    @Override
+    public boolean containsValue( Object value ) {
+        return keyToValue.containsValue( value );
+    }
+
+    @Override
+    public boolean containsKey( Object key ) {
+        return keyToValue.containsKey( key );
+    }
+
+    @Override
+    public ReadOnlyJSONElement get( Object key ) {
+        return keyToValue.get( key );
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return keyToValue.isEmpty();
+    }
+
+    @Override
+    public int size() {
+        return keyToValue.size();
+    }
+
+    private void beSmugAboutImmutability() {
+        throw new UnsupportedOperationException( "I am immutable. Use a normal JSONObject if you need mutability." );
+    }
+
+    @Override
+    public void clear() {
+        beSmugAboutImmutability();
+    }
+
+    @Override
+    public ReadOnlyJSONElement put( String key, ReadOnlyJSONElement value) {
+        beSmugAboutImmutability();
+        return null; // never occurs. Being smug about immutability causes people to hurl.
+    }
+
+    @Override
+    public void putAll( Map<? extends String, ? extends ReadOnlyJSONElement> newValues ) {
+        beSmugAboutImmutability();
+    }
+
+    @Override
+    public ReadOnlyJSONElement remove( Object ohGodLegacy ) {
+        beSmugAboutImmutability();
+        return null; // never occurs. Being smug about immutability causes people to hurl.
+    }
+}

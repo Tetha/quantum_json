@@ -1,0 +1,8 @@
+package org.subquark.quantum_json.impl;
+
+public final class JSONArray implements JSONElement {
+    @Override
+    public JSONArray asJSONArray() {
+        return this;
+    }
+}
