@@ -35,13 +35,10 @@ public interface ReadOnlyJSONElement {
 
     /* ------------------------------------------------------------------ */
 
-    /*
-
     default JSONBoolean asJSONBoolean() {
         throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to JSONBoolean" );
     }
 
-    */
     default boolean asJavaBoolean() {
         throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to java boolean" );
     }
