@@ -18,19 +18,18 @@ public interface ReadOnlyJSONElement {
         throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to read-only JSONObject" );
     }
 
-    default ReadOnlyJSONArray asReadOnlyJSONArray() {
-        throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to read-only JSONArray" );
+    default Map<String, ReadOnlyJSONElement> asReadOnlyJavaMap() {
+        throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to read-only java map" );
     }
 
     /* ------------------------------------------------------------------ */
 
-    default List<ReadOnlyJSONElement> asReadOnlyJavaList() {
-        throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to read-only java list" );
+    default ReadOnlyJSONArray asReadOnlyJSONArray() {
+        throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to read-only JSONArray" );
     }
 
-
-    default Map<String, ReadOnlyJSONElement> asReadOnlyJavaMap() {
-        throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to read-only java map" );
+    default List<ReadOnlyJSONElement> asReadOnlyJavaList() {
+        throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to read-only java list" );
     }
 
     /* ------------------------------------------------------------------ */
