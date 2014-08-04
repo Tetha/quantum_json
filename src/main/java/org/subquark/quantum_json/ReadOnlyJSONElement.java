@@ -48,10 +48,9 @@ public interface ReadOnlyJSONElement {
 
     /* ------------------------------------------------------------------ */
 
-    /*
     default JSONString asJSONString() {
         throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to JSONString" );
-    }*/
+    }
 
     default String asJavaString() {
         throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to java string" );
