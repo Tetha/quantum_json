@@ -55,11 +55,10 @@ public interface ReadOnlyJSONElement {
 
     /* ------------------------------------------------------------------ */
 
-    /*
     default JSONNumber asJSONNumber() {
         throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to JSONNumber" );
     }
-    */
+
     default long asJavaLong() {
         throw new UnsupportedOperationException( "Cannot convert " + getClass() + " to java long" );
     }
