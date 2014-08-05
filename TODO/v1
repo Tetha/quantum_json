@@ -1,0 +1,10 @@
+- hashcode/equals/tostring for readonly json object
+- hashcode/equals/tostring for readonly json array
+
+- json array
+- json object
+
+- parser
+- printer
+
+- add LGPL
