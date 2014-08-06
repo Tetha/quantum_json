@@ -1,6 +1,6 @@
 [done] - hashcode/equals/tostring for readonly json object
   - Objects.requireNonNull in constructors
-- hashCode/equals/toString for readonly json array
+[done] - hashCode/equals/toString for readonly json array
 
 
 - json array
