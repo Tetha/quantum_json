@@ -33,4 +33,42 @@ public final class ConcreteReadOnlyJSONArray implements ReadOnlyJSONArray {
     public List<ReadOnlyJSONElement> asReadOnlyJavaList() {
         return elements; // all constructors make sure to create unmodifiable lists
     }
+
+    @Override
+    public boolean equals( Object o ) {
+        if ( o == this ) return true;
+        if ( o == null ) return false;
+
+        if ( !( o instanceof ConcreteReadOnlyJSONArray ) ) return false;
+
+        ConcreteReadOnlyJSONArray co = (ConcreteReadOnlyJSONArray) o;
+
+        if ( elements.size() != co.elements.size() ) return false;
+
+        for ( int ii = 0; ii < elements.size(); ii++ ) {
+            if ( !elements.get( ii ).equals( co.elements.get( ii ) ) ) return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        int arbitraryPrime = 31;
+        for ( ReadOnlyJSONElement e : elements ) {
+            result = result * arbitraryPrime + e.hashCode();
+        }
+        return result;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append( "ConcreteReadOnlyJSONArray(" );
+        result.append( "elements=[");
+        elements.forEach( e -> result.append( e.toString() ).append( "," ) );
+        result.append( "]" );
+        result.append( ")" );
+        return result.toString();
+    }
 }
