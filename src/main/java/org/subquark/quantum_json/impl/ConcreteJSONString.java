@@ -8,7 +8,7 @@ public final class ConcreteJSONString implements JSONString {
     private final String contents;
 
     public ConcreteJSONString( String contents ) {
-        this.contents = contents;
+        this.contents = Objects.requireNonNull( contents );
     }
 
     @Override
